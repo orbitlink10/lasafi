@@ -36,8 +36,8 @@
     .pages-check { width:18px; height:18px; border:1px solid #7b8794; border-radius:4px; }
     .pages-no { width:88px; color:#002d68; }
     .pages-image { width:150px; max-width:100%; height:auto; max-height:100px; object-fit:cover; display:block; }
-    .pages-action { display:flex; flex-direction:row; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap; }
-    .pages-pill { min-width:auto; height:31px; display:inline-flex; align-items:center; justify-content:center; gap:6px; border-radius:999px; background:transparent; font-size:14px; line-height:21px; font-weight:600; padding:4px 12px; text-decoration:none; }
+    .pages-action { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; }
+    .pages-pill { width:134px; min-width:134px; height:31px; display:inline-flex; align-items:center; justify-content:center; gap:6px; border-radius:999px; background:transparent; font-size:14px; line-height:21px; font-weight:600; padding:4px 12px; text-decoration:none; white-space:nowrap; overflow:hidden; }
     .pages-pill.preview { color:#0798bd; border:1px solid #08a7ce; }
     .pages-pill.update { color:#ffb000; border:1px solid #ffbf19; }
     .pages-pill.delete { color:#ff2434; border:1px solid #ff2434; }
@@ -78,7 +78,7 @@
                         <th style="width:24%;">Title</th>
                         <th style="width:24%;">Alt Text</th>
                         <th style="width:9%;">Type</th>
-                        <th style="width:12%;">Action</th>
+                        <th style="width:13%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
