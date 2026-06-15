@@ -16,7 +16,7 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section class="section" id="services">
     <div class="container">
         <div class="d-flex justify-content-between align-items-end mb-4"><div><h2 class="fw-bold">Popular Services</h2><p class="text-muted mb-0">Transparent starting prices in KES.</p></div></div>
         <div class="row g-3">
@@ -26,7 +26,7 @@
         </div>
     </div>
 </section>
-<section class="section bg-white">
+<section class="section bg-white" id="how-it-works">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4"><h3>1. Choose</h3><p>Select a service, location and preferred time.</p></div>
@@ -35,7 +35,7 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section class="section" id="why-lasafi">
     <div class="container">
         <div class="row g-4 align-items-center">
             <div class="col-lg-6"><h2 class="fw-bold">Why Choose Us</h2><p>Verified providers, dispatch support, same-day options, M-Pesa-ready payments, and coverage for homes and businesses.</p></div>
@@ -43,10 +43,15 @@
         </div>
     </div>
 </section>
-<section class="section bg-white">
+<section class="section bg-white" id="service-areas">
     <div class="container">
         <h2 class="fw-bold">Service Areas</h2>
         <p class="lead">Nairobi, Kiambu, Machakos, Kajiado, Mombasa, Nakuru, Kisumu and Eldoret.</p>
+    </div>
+</section>
+<section class="section bg-white pt-0" id="testimonials">
+    <div class="container">
+        <h2 class="fw-bold">Customer Testimonials</h2>
         <div class="row g-3 mt-2">
             @forelse($testimonials as $review)
                 <div class="col-md-4"><div class="card h-100"><div class="card-body"><strong>{{ $review->customer->name }}</strong><p class="mb-1">{{ $review->comment }}</p><span class="text-brand">{{ str_repeat('*', $review->rating) }}</span></div></div></div>
