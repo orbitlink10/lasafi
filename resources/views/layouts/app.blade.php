@@ -7,9 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root { --slk-green:#0f9f6e; --slk-blue:#0b5ed7; --slk-ink:#123; --slk-soft:#eef8f4; }
-        body { background:#f6f9fb; color:var(--slk-ink); font-size:.92rem; }
+        body { background:#f6f9fb; color:var(--slk-ink); font-size:1rem; }
         .navbar { box-shadow:0 8px 30px rgba(16,24,40,.08); }
-        .navbar .nav-link { color:#334155; font-weight:600; }
+        .navbar .nav-link { color:#334155; font-size:1rem; font-weight:600; }
         .navbar .nav-link:hover,
         .navbar .nav-link.active { color:var(--slk-green); }
         .brand-mark { width:34px; height:34px; border-radius:8px; background:linear-gradient(135deg,var(--slk-green),var(--slk-blue)); display:inline-grid; place-items:center; color:#fff; font-weight:800; }
@@ -17,14 +17,14 @@
         .btn-brand:hover { background:#0a8a5f; color:#fff; }
         .text-brand { color:var(--slk-green); }
         .hero { background:linear-gradient(120deg,rgba(8,91,66,.92),rgba(9,75,151,.88)), var(--hero-image) center/cover; color:#fff; }
-        .hero h1 { font-size:clamp(2.05rem, 3.7vw, 3.35rem); }
+        .hero h1 { font-size:clamp(2.35rem, 4vw, 3.75rem); }
         .hero-video { background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.28); border-radius:14px; padding:10px; backdrop-filter:blur(4px); }
-        .lead { font-size:1.04rem; }
+        .lead { font-size:1.16rem; }
         .section { padding:54px 0; }
-        h2 { font-size:1.55rem; }
-        h3 { font-size:1.14rem; }
-        h5 { font-size:1rem; }
-        .btn-lg { --bs-btn-font-size:.98rem; --bs-btn-padding-y:.62rem; --bs-btn-padding-x:1rem; }
+        h2 { font-size:1.8rem; }
+        h3 { font-size:1.3rem; }
+        h5 { font-size:1.12rem; }
+        .btn-lg { --bs-btn-font-size:1.08rem; --bs-btn-padding-y:.68rem; --bs-btn-padding-x:1.08rem; }
         .card { border:0; border-radius:8px; box-shadow:0 12px 35px rgba(16,24,40,.08); }
         .metric { border-left:4px solid var(--slk-green); }
         .status { text-transform:capitalize; }
