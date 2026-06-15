@@ -1,8 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 @section('title', 'Customer Dashboard')
+@section('dashboard-title', 'My Bookings')
+@section('dashboard-subtitle', 'Review bookings, payment status and completed service reviews.')
+@section('dashboard-actions')
+<a class="btn btn-brand" href="{{ route('bookings.create') }}">Book a Service</a>
+@endsection
 @section('content')
-<div class="container section">
-<div class="d-flex justify-content-between align-items-center mb-4"><h1 class="h3">My Bookings</h1><a class="btn btn-brand" href="{{ route('bookings.create') }}">Book a Service</a></div>
 <div class="row g-3">
 @forelse($bookings as $booking)
 <div class="col-lg-6"><div class="card h-100"><div class="card-body">
@@ -13,5 +16,5 @@
 @if($booking->status === 'pending')<form method="post" action="{{ route('bookings.destroy',$booking) }}">@csrf @method('delete')<button class="btn btn-sm btn-outline-danger">Cancel</button></form>@endif</div>
 </div></div></div>
 @empty <div class="col"><div class="alert alert-info">No bookings yet.</div></div>@endforelse
-</div></div>
+</div>
 @endsection
