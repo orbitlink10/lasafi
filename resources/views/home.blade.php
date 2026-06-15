@@ -39,7 +39,7 @@
         <a class="kingdom-arrow right" href="#services" aria-label="Next services">&rsaquo;</a>
         <div class="row g-4 justify-content-center">
             @foreach($popularServices as $service)
-                <div class="col-md-6 col-xl-3">
+                <div class="col-md-6 col-lg-4">
                     <article class="kingdom-service-card h-100">
                         <div class="kingdom-check">✓</div>
                         <h5>{{ $service->name }}</h5>

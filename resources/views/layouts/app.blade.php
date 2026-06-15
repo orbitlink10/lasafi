@@ -28,17 +28,17 @@
         .card { border:0; border-radius:8px; box-shadow:0 12px 35px rgba(16,24,40,.08); }
         .services-kingdom { background:#fff; position:relative; overflow:hidden; }
         .services-kingdom::before { content:""; position:absolute; top:0; left:2%; right:2%; height:14px; background:#1b294b; border-bottom-left-radius:52px; border-bottom-right-radius:52px; }
-        .services-kingdom .section-title { color:#172342; font-size:clamp(2rem,3.6vw,3.25rem); font-weight:850; letter-spacing:0; text-align:center; margin-bottom:42px; }
-        .kingdom-service-card { min-height:360px; border:2px solid #e8ebf0; border-radius:30px; box-shadow:none; background:#fff; padding:34px 30px; display:flex; flex-direction:column; justify-content:flex-start; transition:transform .2s ease, box-shadow .2s ease; }
+        .services-kingdom .section-title { color:#172342; font-size:clamp(1.7rem,3vw,2.6rem); font-weight:850; letter-spacing:0; text-align:center; margin-bottom:32px; }
+        .kingdom-service-card { min-height:285px; border:2px solid #e8ebf0; border-radius:22px; box-shadow:none; background:#fff; padding:26px 26px; display:flex; flex-direction:column; justify-content:flex-start; transition:transform .2s ease, box-shadow .2s ease; }
         .kingdom-service-card:hover { transform:translateY(-4px); box-shadow:0 18px 45px rgba(17,24,39,.08); }
-        .kingdom-check { width:72px; height:72px; border-radius:50%; background:#f4b400; color:#fff; display:grid; place-items:center; font-size:2.4rem; font-weight:900; margin-bottom:42px; line-height:1; }
-        .kingdom-service-card h5 { color:#172342; font-size:1.55rem; line-height:1.28; font-weight:850; margin-bottom:28px; }
-        .kingdom-service-card p { color:#111827; font-size:1.08rem; line-height:1.45; margin-bottom:24px; }
-        .kingdom-price { color:#172342; font-size:1.12rem; font-weight:850; margin-top:auto; }
+        .kingdom-check { width:56px; height:56px; border-radius:50%; background:#f4b400; color:#fff; display:grid; place-items:center; font-size:1.9rem; font-weight:900; margin-bottom:28px; line-height:1; }
+        .kingdom-service-card h5 { color:#172342; font-size:1.32rem; line-height:1.25; font-weight:850; margin-bottom:18px; }
+        .kingdom-service-card p { color:#111827; font-size:1rem; line-height:1.42; margin-bottom:20px; }
+        .kingdom-price { color:#172342; font-size:1.02rem; font-weight:850; margin-top:auto; }
         .kingdom-arrow { position:absolute; top:50%; transform:translateY(-10%); width:44px; height:44px; border:3px solid #172342; border-radius:50%; display:grid; place-items:center; color:#172342; background:#fff; font-size:2rem; line-height:1; text-decoration:none; }
         .kingdom-arrow.left { left:20px; }
         .kingdom-arrow.right { right:20px; }
-        @media (max-width: 1199.98px) { .kingdom-arrow { display:none; } .kingdom-service-card { min-height:300px; } }
+        @media (max-width: 1199.98px) { .kingdom-arrow { display:none; } .kingdom-service-card { min-height:275px; } }
         .metric { border-left:4px solid var(--slk-green); }
         .status { text-transform:capitalize; }
         footer { background:#071b2f; color:#d9e8f3; }
