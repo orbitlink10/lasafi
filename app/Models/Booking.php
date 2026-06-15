@@ -9,7 +9,7 @@ class Booking extends Model
     protected $fillable = [
         'customer_id', 'category_id', 'service_id', 'provider_id', 'booking_number',
         'location', 'preferred_date', 'preferred_time', 'description', 'urgency',
-        'estimated_price', 'status', 'provider_status', 'assigned_at', 'completed_at',
+        'video_path', 'estimated_price', 'status', 'provider_status', 'assigned_at', 'completed_at',
     ];
 
     protected function casts(): array

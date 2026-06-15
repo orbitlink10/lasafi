@@ -13,6 +13,11 @@
 <div class="col-md-4"><label class="form-label">Urgency</label><select class="form-select" name="urgency"><option value="normal">Normal</option><option value="same-day">Same-day</option><option value="emergency">Emergency</option></select></div>
 <div class="col-md-6"><label class="form-label">Estimated price</label><input class="form-control" type="number" name="estimated_price" min="0" step="1"></div>
 <div class="col-md-6"><label class="form-label">Images</label><input class="form-control" type="file" name="images[]" multiple accept="image/*"></div>
+<div class="col-12">
+    <label class="form-label">Upload video</label>
+    <input class="form-control" type="file" name="video" accept="video/mp4,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/webm">
+    <div class="form-text">Optional. Upload one video up to 50 MB to show the work area or service details.</div>
+</div>
 <div class="col-12"><label class="form-label">Description of work</label><textarea class="form-control" name="description" rows="4"></textarea></div>
 </div><button class="btn btn-brand mt-3">Submit Booking</button>
 </form></div></div></div></div></div>

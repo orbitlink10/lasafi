@@ -1,11 +1,11 @@
 @extends('layouts.app')
-@section('title', 'ServiceLink Kenya')
+@section('title', 'Lasafi')
 @section('content')
 <section class="hero section">
     <div class="container py-4">
         <div class="row align-items-center g-4">
             <div class="col-lg-8">
-                <h1 class="display-4 fw-bold">ServiceLink Kenya</h1>
+                <h1 class="display-4 fw-bold">Lasafi</h1>
                 <p class="lead mb-4">Book vetted cleaners, movers, handymen, pest control, laundry, appliance repair, gardening, CCTV, Wi-Fi and office maintenance teams across Kenya.</p>
                 <div class="d-flex flex-wrap gap-2">
                     <a class="btn btn-brand btn-lg" href="{{ route('bookings.create') }}">Book a Service</a>

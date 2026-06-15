@@ -47,7 +47,7 @@ class PaymentController extends Controller
             'PhoneNumber' => $payment->phone_number,
             'CallBackURL' => route('mpesa.callback'),
             'AccountReference' => $booking->booking_number,
-            'TransactionDesc' => 'ServiceLink Kenya booking payment',
+            'TransactionDesc' => 'Lasafi booking payment',
         ])->json();
 
         $payment->update([

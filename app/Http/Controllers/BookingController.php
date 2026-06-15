@@ -33,10 +33,16 @@ class BookingController extends Controller
     public function store(StoreBookingRequest $request)
     {
         $service = Service::findOrFail($request->integer('service_id'));
+        $bookingData = $request->safe()->except(['images', 'video']);
+
+        if ($request->hasFile('video')) {
+            $bookingData['video_path'] = $request->file('video')->store('booking-videos', 'public');
+        }
+
         $booking = Booking::create([
-            ...$request->validated(),
+            ...$bookingData,
             'customer_id' => auth()->id(),
-            'booking_number' => 'SLK-'.now()->format('ymd').'-'.Str::upper(Str::random(6)),
+            'booking_number' => 'LAS-'.now()->format('ymd').'-'.Str::upper(Str::random(6)),
             'estimated_price' => $request->input('estimated_price') ?: $service->base_price,
         ]);
 

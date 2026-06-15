@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'ServiceLink Kenya')</title>
+    <title>@yield('title', 'Lasafi')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root { --slk-green:#0f9f6e; --slk-blue:#0b5ed7; --slk-ink:#123; --slk-soft:#eef8f4; }
@@ -24,7 +24,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-white sticky-top">
     <div class="container">
-        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ route('home') }}"><span class="brand-mark">SL</span> ServiceLink Kenya</a>
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ route('home') }}"><span class="brand-mark">LA</span> Lasafi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
         <div id="nav" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
@@ -50,7 +50,7 @@
 </main>
 <footer class="py-4 mt-5">
     <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-        <span>ServiceLink Kenya</span>
+        <span>Lasafi</span>
         <span>Cleaning, movers, repairs, networking, CCTV and office maintenance.</span>
     </div>
 </footer>

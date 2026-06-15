@@ -6,6 +6,15 @@
 <p class="lead">{{ $booking->service->name }} in {{ $booking->location }}</p>
 <dl class="row"><dt class="col-sm-4">Customer</dt><dd class="col-sm-8">{{ $booking->customer->name }}</dd><dt class="col-sm-4">Provider</dt><dd class="col-sm-8">{{ $booking->provider->name ?? 'Unassigned' }}</dd><dt class="col-sm-4">Schedule</dt><dd class="col-sm-8">{{ $booking->preferred_date->format('d M Y') }} {{ substr($booking->preferred_time,0,5) }}</dd><dt class="col-sm-4">Urgency</dt><dd class="col-sm-8">{{ $booking->urgency }}</dd><dt class="col-sm-4">Estimate</dt><dd class="col-sm-8">KES {{ number_format($booking->estimated_price) }}</dd></dl>
 <p>{{ $booking->description }}</p>
+@if($booking->video_path)
+    <div class="mt-4">
+        <h2 class="h5">Uploaded Video</h2>
+        <video class="w-100 rounded" controls preload="metadata">
+            <source src="{{ asset('storage/'.$booking->video_path) }}">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+@endif
 @auth @if(auth()->user()->isRole(['admin','dispatcher']))<a class="btn btn-outline-primary" href="{{ route('admin.assignments.edit',$booking) }}">Assign Provider</a>@endif @endauth
 </div></div></div>
 <div class="col-lg-4"><div class="card mb-3"><div class="card-body"><h2 class="h5">M-Pesa Payment</h2><form method="post" action="{{ route('payments.mpesa',$booking) }}">@csrf <input class="form-control mb-2" name="phone_number" value="{{ auth()->user()->phone }}" placeholder="2547..."><input class="form-control mb-2" name="amount" value="{{ $booking->estimated_price }}"><button class="btn btn-brand w-100">Send STK Push</button></form></div></div>

@@ -32,6 +32,7 @@ class StoreBookingRequest extends FormRequest
             'urgency' => ['required', 'in:normal,same-day,emergency'],
             'estimated_price' => ['nullable', 'numeric', 'min:0'],
             'images.*' => ['nullable', 'image', 'max:4096'],
+            'video' => ['nullable', 'file', 'mimetypes:video/mp4,video/quicktime,video/x-msvideo,video/x-ms-wmv,video/webm', 'max:51200'],
         ];
     }
 }

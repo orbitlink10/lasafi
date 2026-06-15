@@ -26,16 +26,16 @@ class DatabaseSeeder extends Seeder
             ['name' => 'dispatcher', 'label' => 'Staff/Dispatcher'],
         ])->mapWithKeys(fn ($role) => [$role['name'] => Role::updateOrCreate(['name' => $role['name']], $role)]);
 
-        $admin = User::updateOrCreate(['email' => 'admin@servicelink.co.ke'], [
+        $admin = User::updateOrCreate(['email' => 'admin@lasafi.co.ke'], [
             'role_id' => $roles['admin']->id,
-            'name' => 'ServiceLink Admin',
+            'name' => 'Lasafi Admin',
             'phone' => '0711000000',
             'county' => 'Nairobi',
             'location' => 'Westlands',
             'password' => Hash::make('password'),
         ]);
 
-        User::updateOrCreate(['email' => 'dispatcher@servicelink.co.ke'], [
+        User::updateOrCreate(['email' => 'dispatcher@lasafi.co.ke'], [
             'role_id' => $roles['dispatcher']->id,
             'name' => 'Operations Dispatcher',
             'phone' => '0711000001',
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
             return Service::updateOrCreate(['slug' => Str::slug($name)], [
                 'category_id' => $categories[$category]->id,
                 'name' => $name,
-                'description' => 'Reliable '.$name.' by vetted ServiceLink Kenya professionals.',
+                'description' => 'Reliable '.$name.' by vetted Lasafi professionals.',
                 'base_price' => $price,
                 'unit_type' => $unit,
                 'is_active' => true,
@@ -114,7 +114,7 @@ class DatabaseSeeder extends Seeder
         ]);
         $provider->services()->sync($serviceModels->take(4)->pluck('id'));
 
-        $booking = Booking::updateOrCreate(['booking_number' => 'SLK-DEMO-001'], [
+        $booking = Booking::updateOrCreate(['booking_number' => 'LAS-DEMO-001'], [
             'customer_id' => $customer->id,
             'category_id' => $categories['Cleaning']->id,
             'service_id' => $serviceModels->first()->id,
