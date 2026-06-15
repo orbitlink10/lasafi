@@ -8,7 +8,7 @@
 <section class="hero section" style="--hero-image:url('{{ $heroImageUrl }}')">
     <div class="container py-4">
         <div class="row align-items-center g-4">
-            <div class="col-lg-8">
+            <div class="{{ $homeVideoEmbedUrl ? 'col-lg-7' : 'col-lg-8' }}">
                 <h1 class="display-4 fw-bold">{{ $content['home_hero_title'] }}</h1>
                 <p class="lead mb-4">{{ $content['home_hero_description'] }}</p>
                 <div class="d-flex flex-wrap gap-2">
@@ -17,6 +17,15 @@
                     <a class="btn btn-outline-light btn-lg" href="{{ $content['home_whatsapp_url'] }}">{{ $content['home_whatsapp_cta'] }}</a>
                 </div>
             </div>
+            @if($homeVideoEmbedUrl)
+                <div class="col-lg-5">
+                    <div class="hero-video">
+                        <div class="ratio ratio-16x9 rounded overflow-hidden">
+                            <iframe src="{{ $homeVideoEmbedUrl }}" title="Lasafi video" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </section>
@@ -44,13 +53,7 @@
         <div class="row g-4 align-items-center">
             <div class="col-lg-6"><h2 class="fw-bold">{{ $content['home_why_title'] }}</h2><p>{{ $content['home_why_text'] }}</p></div>
             <div class="col-lg-6">
-                @if($homeVideoEmbedUrl)
-                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                        <iframe src="{{ $homeVideoEmbedUrl }}" title="Lasafi video" allowfullscreen></iframe>
-                    </div>
-                @else
-                    <div class="row g-2">@foreach($categories as $category)<div class="col-6"><div class="p-3 bg-white rounded shadow-sm">{{ $category->name }}</div></div>@endforeach</div>
-                @endif
+                <div class="row g-2">@foreach($categories as $category)<div class="col-6"><div class="p-3 bg-white rounded shadow-sm">{{ $category->name }}</div></div>@endforeach</div>
             </div>
         </div>
     </div>
