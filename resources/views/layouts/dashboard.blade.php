@@ -6,7 +6,7 @@
     <title>@yield('title', 'Dashboard') - Lasafi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -20,40 +20,32 @@
             --dash-green:#0f9f6e;
             --dash-blue:#0b5ed7;
         }
-        body, button, input, select, textarea { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
-        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-size:.96rem; font-weight:400; overflow-x:hidden; }
-        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:374px minmax(0,1fr); }
-        .dashboard-sidebar { background:linear-gradient(180deg,#fbfdff 0%,#eef3f8 100%); border-right:1px solid #dbe4f0; padding:48px 30px 24px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:8px 0 28px rgba(15,23,42,.08); }
-        .dashboard-brand { display:flex; align-items:center; justify-content:flex-start; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:20px; padding:16px 40px; min-height:80px; font-size:1.5rem; font-weight:700; color:#303740; text-decoration:none; box-shadow:0 16px 34px rgba(15,23,42,.07); }
+        body, button, input, select, textarea { font-family:'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing:normal; }
+        body { margin:0; background:#fff; color:#212529; font-size:16px; font-weight:400; line-height:24px; overflow-x:hidden; }
+        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:250px minmax(0,1fr); }
+        .dashboard-sidebar { background:#fff; border-right:1px solid #dbe4f0; padding:34px 18px 24px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:0 14px 28px rgba(0,0,0,.25), 0 10px 10px rgba(0,0,0,.22); }
+        .dashboard-brand { display:flex; align-items:center; justify-content:center; gap:8px; background:transparent; border:0; border-radius:0; padding:8px 0 28px; min-height:auto; font-size:16px; line-height:24px; font-weight:400; color:#343a40; text-decoration:none; box-shadow:none; }
         .dashboard-brand-mark { display:none; }
-        .sidebar-section { margin-top:44px; }
-        .sidebar-heading { color:#94a4b9; font-size:.86rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; margin:0 0 22px 2px; }
-        .sidebar-link { display:grid; grid-template-columns:52px 1fr; align-items:center; gap:14px; min-height:66px; padding:7px 14px; color:#42516a; text-decoration:none; font-size:1.15rem; font-weight:700; border-radius:14px; margin-bottom:16px; }
-        .sidebar-link:hover, .sidebar-link.active { background:#fff; color:#213a59; box-shadow:0 14px 35px rgba(15,23,42,.06); }
-        .sidebar-icon { width:52px; height:52px; border-radius:14px; background:#dfe7f2; display:grid; place-items:center; color:#647891; font-size:1.08rem; }
-        .sidebar-link.active .sidebar-icon { background:#d7e2f0; color:#42658f; }
-        .dashboard-main { min-width:0; padding:0; background:#eef1f7; overflow-x:hidden; }
+        .sidebar-section { margin-top:24px; }
+        .sidebar-heading { color:#94a3b8; font-size:.76rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; margin:0 0 8px 12px; }
+        .sidebar-link { display:grid; grid-template-columns:32px 1fr; align-items:center; gap:12px; min-height:54px; padding:10px 12px; color:#475569; text-decoration:none; font-size:16px; line-height:24px; font-weight:400; border-radius:12px; margin-bottom:3.2px; }
+        .sidebar-link:hover, .sidebar-link.active { background:#2563eb; color:#fff; box-shadow:none; }
+        .sidebar-icon { width:32px; height:32px; border-radius:10px; background:#e2e8f0; display:grid; place-items:center; color:#64748b; font-size:1rem; }
+        .sidebar-link.active .sidebar-icon, .sidebar-link:hover .sidebar-icon { background:rgba(255,255,255,.22); color:#fff; }
+        .dashboard-main { min-width:0; padding:0; background:#f4f6fb; overflow-x:hidden; }
         .dashboard-topbar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:18px; }
-        .dashboard-title { margin:0; font-size:1.55rem; font-weight:800; color:#203a58; }
-        .dashboard-subtitle { color:#6b7f99; margin:3px 0 0; font-size:.98rem; }
-        .dashboard-content-card, .card { border:0; border-radius:16px; box-shadow:0 16px 45px rgba(15,23,42,.08); }
+        .dashboard-title { margin:0 0 4px; font-size:28.8px; line-height:34.56px; font-weight:600; color:#0f172a; }
+        .dashboard-subtitle { color:#6c757d; margin:0; font-size:16px; line-height:24px; }
+        .dashboard-content-card, .card { border:0; border-radius:4.8px; box-shadow:0 16px 48px rgba(0,0,0,.176); }
         .metric { border-left:0; }
         .metric .card-body { min-height:78px; display:flex; flex-direction:column; justify-content:center; }
-        .card-body, .form-control, .form-select, .btn, .table, .form-label { font-size:1rem; }
+        .card-body, .form-control, .form-select, .btn, .table, .form-label { font-size:16px; }
         .h4 { font-size:1.25rem; }
         .h5 { font-size:1.12rem; }
         .h6 { font-size:1rem; }
         .btn-brand { background:var(--dash-green); color:#fff; border:0; }
         .btn-brand:hover { background:#0a8a5f; color:#fff; }
         .status { text-transform:capitalize; }
-        @media (max-width: 1399.98px) {
-            .dashboard-shell { grid-template-columns:320px minmax(0,1fr); }
-            .dashboard-sidebar { padding:34px 24px 24px; }
-            .dashboard-brand { padding-left:28px; padding-right:28px; }
-            .sidebar-section { margin-top:34px; }
-            .sidebar-link { min-height:58px; grid-template-columns:46px 1fr; margin-bottom:10px; }
-            .sidebar-icon { width:46px; height:46px; }
-        }
         @media (max-width: 991.98px) {
             .dashboard-shell { display:block; }
             .dashboard-sidebar { position:relative; width:100%; height:auto; max-height:none; }

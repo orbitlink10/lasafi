@@ -15,36 +15,35 @@
     };
 @endphp
 <style>
-    .pages-screen, .pages-screen button, .pages-screen input, .pages-screen select { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
-    .pages-screen { min-height:100vh; padding:38px 24px 30px; background:#eef1f7; color:#001a3d; font-weight:400; overflow:hidden; }
-    .pages-heading h1 { margin:0; font-size:2.25rem; line-height:1.1; font-weight:800; letter-spacing:0; color:#001438; }
-    .pages-heading p { margin:8px 0 32px; font-size:1.25rem; font-weight:400; color:#667789; }
-    .pages-card { background:#fff; border-radius:8px 8px 0 0; overflow:hidden; box-shadow:none; }
-    .pages-card-head { display:flex; align-items:center; justify-content:space-between; min-height:72px; padding:16px 26px; border-bottom:1px solid #dce5ef; }
-    .pages-card-title { margin:0; font-size:1.35rem; font-weight:800; color:#001438; }
-    .pages-add-btn { display:inline-flex; align-items:center; gap:8px; border:0; border-radius:24px; padding:8px 18px; color:#087df4; background:#f7f9fb; font-size:1.08rem; font-weight:800; text-decoration:none; }
-    .pages-toolbar { display:flex; align-items:center; gap:10px; padding:24px 26px 22px; background:#fff; }
-    .pages-select { width:150px; height:42px; border:1px solid #cdd6e2; border-radius:6px; padding:0 12px; font-size:.96rem; font-weight:400; color:#2d3748; background:#fff; }
-    .pages-apply { height:42px; border:0; border-radius:22px; padding:0 19px; background:#0d80f7; color:#fff; font-size:1.04rem; font-weight:700; }
-    .pages-table-wrap { padding:0 26px 26px; background:#fff; overflow-x:auto; }
+    .pages-screen, .pages-screen button, .pages-screen input, .pages-screen select { font-family:'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; letter-spacing:normal; }
+    .pages-screen { min-height:100vh; padding:36px 24px 57px; background:#f4f6fb; color:#212529; font-size:16px; line-height:24px; font-weight:400; overflow:hidden; }
+    .pages-heading h1 { margin:0 0 4px; font-size:28.8px; line-height:34.56px; font-weight:600; letter-spacing:normal; color:#0f172a; }
+    .pages-heading p { margin:0 0 24px; font-size:16px; line-height:24px; font-weight:400; color:#6c757d; }
+    .pages-card { background:#fff; border-radius:4.8px; overflow:hidden; box-shadow:0 16px 48px rgba(0,0,0,.176); margin-bottom:16px; }
+    .pages-card-head { display:flex; align-items:center; justify-content:space-between; min-height:56px; padding:12px 20px; border-bottom:1px solid rgba(0,0,0,.125); }
+    .pages-card-title { margin:0; font-size:17.6px; line-height:21.12px; font-weight:600; color:#0f172a; }
+    .pages-add-btn { display:inline-flex; align-items:center; gap:6px; border:0; border-radius:999px; padding:4px 12px; color:#007bff; background:#f8f9fa; font-size:14px; line-height:21px; font-weight:700; text-decoration:none; }
+    .pages-toolbar { display:flex; align-items:center; gap:8px; padding:20px 20px 16px; background:#fff; }
+    .pages-select { width:102px; height:31px; border:1px solid #ced4da; border-radius:4px; padding:4px 28px 4px 8px; font-size:12px; line-height:18px; font-weight:400; color:#495057; background:#fff; box-shadow:inset 0 1px 2px rgba(0,0,0,.075); }
+    .pages-apply { height:31px; border:0; border-radius:999px; padding:4px 12px; background:#007bff; color:#fff; font-size:14px; line-height:21px; font-weight:600; }
+    .pages-table-wrap { padding:0 20px 20px; background:#fff; overflow-x:auto; }
     .pages-table { width:100%; border-collapse:collapse; table-layout:fixed; color:#001438; }
-    .pages-table thead tr { background:#f7f9fb; border-top:1px solid #dce5ef; border-bottom:1px solid #dce5ef; }
-    .pages-table th { padding:16px 18px; color:#556e8f; font-size:.92rem; letter-spacing:.24em; text-transform:uppercase; font-weight:800; }
-    .pages-table td { padding:18px; font-size:1.16rem; line-height:1.45; font-weight:400; vertical-align:middle; border-bottom:18px solid #fff; background:#f0f0f0; overflow-wrap:anywhere; }
-    .pages-table tbody tr:nth-child(even) td { background:#fff; }
+    .pages-table thead tr { background:#f8fafc; border:0; }
+    .pages-table th { padding:12px; color:#64748b; font-size:11.52px; line-height:17.28px; letter-spacing:1.3824px; text-transform:uppercase; font-weight:700; background:#f8fafc; }
+    .pages-table td { padding:12px; font-size:16px; line-height:24px; font-weight:400; color:#1f2937; vertical-align:middle; border-bottom:1px solid #dee2e6; background:transparent; overflow-wrap:anywhere; }
+    .pages-table tbody tr:nth-child(odd) { background:rgba(0,0,0,.05); }
+    .pages-table tbody tr:nth-child(even) { background:#fff; }
     .pages-check { width:18px; height:18px; border:1px solid #7b8794; border-radius:4px; }
     .pages-no { width:88px; color:#002d68; }
-    .pages-image { width:225px; max-width:100%; height:120px; object-fit:cover; display:block; }
-    .pages-action { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
-    .pages-pill { min-width:122px; height:36px; display:inline-flex; align-items:center; justify-content:center; gap:7px; border-radius:20px; background:#fff; font-size:1rem; line-height:1; font-weight:500; text-decoration:none; }
+    .pages-image { width:150px; max-width:100%; height:auto; max-height:100px; object-fit:cover; display:block; }
+    .pages-action { display:flex; flex-direction:row; align-items:center; justify-content:center; gap:4px; flex-wrap:wrap; }
+    .pages-pill { min-width:auto; height:31px; display:inline-flex; align-items:center; justify-content:center; gap:6px; border-radius:999px; background:transparent; font-size:14px; line-height:21px; font-weight:600; padding:4px 12px; text-decoration:none; }
     .pages-pill.preview { color:#0798bd; border:1px solid #08a7ce; }
     .pages-pill.update { color:#ffb000; border:1px solid #ffbf19; }
     .pages-pill.delete { color:#ff2434; border:1px solid #ff2434; }
     .pages-delete-form { margin:0; }
     @media (max-width: 991.98px) {
-        .pages-screen { padding:28px 16px; }
-        .pages-heading h1 { font-size:2.15rem; }
-        .pages-heading p { font-size:1.1rem; }
+        .pages-screen { padding:20px 16px; }
         .pages-card-head, .pages-toolbar, .pages-table-wrap { padding-left:16px; padding-right:16px; }
     }
 </style>
