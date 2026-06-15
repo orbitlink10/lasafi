@@ -27,7 +27,6 @@
         .btn-lg { --bs-btn-font-size:1.08rem; --bs-btn-padding-y:.68rem; --bs-btn-padding-x:1.08rem; }
         .card { border:0; border-radius:8px; box-shadow:0 12px 35px rgba(16,24,40,.08); }
         .services-kingdom { background:#fff; position:relative; overflow:hidden; }
-        .services-kingdom::before { content:""; position:absolute; top:0; left:2%; right:2%; height:14px; background:#1b294b; border-bottom-left-radius:52px; border-bottom-right-radius:52px; }
         .services-kingdom .section-title { color:#172342; font-size:clamp(1.7rem,3vw,2.6rem); font-weight:850; letter-spacing:0; text-align:center; margin-bottom:32px; }
         .kingdom-service-card { min-height:285px; border:2px solid #e8ebf0; border-radius:22px; box-shadow:none; background:#fff; padding:26px 26px; display:flex; flex-direction:column; justify-content:flex-start; transition:transform .2s ease, box-shadow .2s ease; }
         .kingdom-service-card:hover { transform:translateY(-4px); box-shadow:0 18px 45px rgba(17,24,39,.08); }
