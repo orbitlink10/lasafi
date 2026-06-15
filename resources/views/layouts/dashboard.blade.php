@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Dashboard') - Lasafi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <style>
@@ -17,10 +20,11 @@
             --dash-green:#0f9f6e;
             --dash-blue:#0b5ed7;
         }
-        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:.96rem; }
+        body, button, input, select, textarea { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
+        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-size:.96rem; font-weight:400; }
         .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:372px minmax(0,1fr); }
         .dashboard-sidebar { background:linear-gradient(180deg,#fbfdff 0%,#eef3f8 100%); border-right:1px solid #dbe4f0; padding:48px 30px 28px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:10px 0 30px rgba(15,23,42,.10); }
-        .dashboard-brand { display:flex; align-items:center; justify-content:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:22px; padding:20px 18px; min-height:78px; font-size:1.72rem; font-weight:750; color:#303740; text-decoration:none; box-shadow:0 18px 38px rgba(15,23,42,.07); }
+        .dashboard-brand { display:flex; align-items:center; justify-content:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:22px; padding:20px 18px; min-height:78px; font-size:1.72rem; font-weight:700; color:#303740; text-decoration:none; box-shadow:0 18px 38px rgba(15,23,42,.07); }
         .dashboard-brand-mark { display:none; }
         .sidebar-section { margin-top:45px; }
         .sidebar-heading { color:#94a4b9; font-size:1.05rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; margin:0 0 24px 2px; }
