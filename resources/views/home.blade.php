@@ -29,12 +29,24 @@
         </div>
     </div>
 </section>
-<section class="section" id="services">
+<section class="section services-kingdom" id="services">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-end mb-4"><div><h2 class="fw-bold">{{ $content['home_services_title'] }}</h2><p class="text-muted mb-0">{{ $content['home_services_subtitle'] }}</p></div></div>
-        <div class="row g-3">
+        <h2 class="section-title">{{ $content['home_services_title'] }}</h2>
+        @if($content['home_services_subtitle'])
+            <p class="text-center text-muted lead mb-5">{{ $content['home_services_subtitle'] }}</p>
+        @endif
+        <a class="kingdom-arrow left" href="#services" aria-label="Previous services">&lsaquo;</a>
+        <a class="kingdom-arrow right" href="#services" aria-label="Next services">&rsaquo;</a>
+        <div class="row g-4 justify-content-center">
             @foreach($popularServices as $service)
-                <div class="col-md-6 col-lg-4"><div class="card h-100"><div class="card-body"><span class="badge text-bg-success mb-2">{{ $service->category->name }}</span><h5>{{ $service->name }}</h5><p class="text-muted">{{ $service->description }}</p><strong>KES {{ number_format($service->base_price) }}</strong></div></div></div>
+                <div class="col-md-6 col-xl-3">
+                    <article class="kingdom-service-card h-100">
+                        <div class="kingdom-check">✓</div>
+                        <h5>{{ $service->name }}</h5>
+                        <p>{{ $service->description }}</p>
+                        <div class="kingdom-price">From KES {{ number_format($service->base_price) }}</div>
+                    </article>
+                </div>
             @endforeach
         </div>
     </div>
