@@ -7,4 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Setting extends Model
 {
     protected $fillable = ['key', 'value'];
+
+    public static function valueFor(string $key, ?string $default = null): ?string
+    {
+        return static::where('key', $key)->value('value') ?? $default;
+    }
+
+    public static function putValue(string $key, ?string $value): void
+    {
+        static::updateOrCreate(['key' => $key], ['value' => $value]);
+    }
 }

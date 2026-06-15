@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProviderController;
+use App\Http\Controllers\Admin\HomepageContentController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\Auth\AuthController;
@@ -45,6 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware('role:admin,dispatcher')->prefix('admin')->name('admin.')->group(function () {
         Route::resource('services', ServiceController::class)->except(['show']);
         Route::resource('providers', ProviderController::class)->except(['show']);
+        Route::get('/homepage-content', [HomepageContentController::class, 'edit'])->name('homepage.edit');
+        Route::put('/homepage-content', [HomepageContentController::class, 'update'])->name('homepage.update');
         Route::get('/bookings/{booking}/assign', [AssignmentController::class, 'edit'])->name('assignments.edit');
         Route::patch('/bookings/{booking}/assign', [AssignmentController::class, 'update'])->name('assignments.update');
         Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');

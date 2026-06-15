@@ -17,33 +17,37 @@
             --dash-green:#0f9f6e;
             --dash-blue:#0b5ed7;
         }
-        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; }
-        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:300px minmax(0,1fr); }
-        .dashboard-sidebar { background:linear-gradient(180deg,#f8fbff 0%,#e8eef7 100%); border-right:1px solid #dbe4f0; padding:24px 18px; height:100vh; overflow-y:auto; position:sticky; top:0; }
-        .dashboard-brand { display:flex; align-items:center; gap:12px; background:#fff; border:1px solid #d7e1ee; border-radius:18px; padding:16px 18px; font-size:1.35rem; font-weight:800; color:#233b5a; text-decoration:none; box-shadow:0 10px 28px rgba(15,23,42,.05); }
-        .dashboard-brand-mark { width:42px; height:42px; border-radius:12px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--dash-green),var(--dash-blue)); font-weight:800; }
-        .sidebar-section { margin-top:30px; }
-        .sidebar-heading { color:var(--dash-muted); font-size:.78rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; margin:0 0 14px 4px; }
-        .sidebar-link { display:grid; grid-template-columns:62px 1fr; align-items:center; gap:16px; min-height:78px; padding:8px 10px; color:#2d4a70; text-decoration:none; font-size:1.05rem; font-weight:750; border-radius:18px; margin-bottom:10px; }
+        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:.82rem; }
+        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:230px minmax(0,1fr); }
+        .dashboard-sidebar { background:linear-gradient(180deg,#f8fbff 0%,#e8eef7 100%); border-right:1px solid #dbe4f0; padding:14px 10px; height:100vh; overflow-y:auto; position:sticky; top:0; }
+        .dashboard-brand { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:12px; padding:11px 12px; font-size:.9rem; font-weight:800; color:#233b5a; text-decoration:none; box-shadow:0 10px 28px rgba(15,23,42,.05); }
+        .dashboard-brand-mark { width:30px; height:30px; border-radius:9px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--dash-green),var(--dash-blue)); font-size:.76rem; font-weight:800; }
+        .sidebar-section { margin-top:18px; }
+        .sidebar-heading { color:var(--dash-muted); font-size:.58rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin:0 0 8px 4px; }
+        .sidebar-link { display:grid; grid-template-columns:38px 1fr; align-items:center; gap:10px; min-height:48px; padding:5px 7px; color:#2d4a70; text-decoration:none; font-size:.78rem; font-weight:700; border-radius:12px; margin-bottom:5px; }
         .sidebar-link:hover, .sidebar-link.active { background:#fff; color:#213a59; box-shadow:0 14px 35px rgba(15,23,42,.06); }
-        .sidebar-icon { width:52px; height:52px; border-radius:14px; background:var(--dash-icon); display:grid; place-items:center; color:#5e789d; font-size:1.45rem; }
+        .sidebar-icon { width:34px; height:34px; border-radius:10px; background:var(--dash-icon); display:grid; place-items:center; color:#5e789d; font-size:.95rem; }
         .sidebar-link.active .sidebar-icon { background:#d7e2f0; color:#42658f; }
-        .dashboard-main { min-width:0; padding:28px; }
-        .dashboard-topbar { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:24px; }
-        .dashboard-title { margin:0; font-weight:800; color:#203a58; }
-        .dashboard-subtitle { color:#6b7f99; margin:4px 0 0; }
+        .dashboard-main { min-width:0; padding:20px; }
+        .dashboard-topbar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:18px; }
+        .dashboard-title { margin:0; font-size:1.18rem; font-weight:800; color:#203a58; }
+        .dashboard-subtitle { color:#6b7f99; margin:3px 0 0; font-size:.78rem; }
         .dashboard-content-card, .card { border:0; border-radius:16px; box-shadow:0 16px 45px rgba(15,23,42,.08); }
         .metric { border-left:0; }
-        .metric .card-body { min-height:112px; display:flex; flex-direction:column; justify-content:center; }
+        .metric .card-body { min-height:78px; display:flex; flex-direction:column; justify-content:center; }
+        .card-body, .form-control, .form-select, .btn, .table, .form-label { font-size:.8rem; }
+        .h4 { font-size:1.05rem; }
+        .h5 { font-size:.95rem; }
+        .h6 { font-size:.78rem; }
         .btn-brand { background:var(--dash-green); color:#fff; border:0; }
         .btn-brand:hover { background:#0a8a5f; color:#fff; }
         .status { text-transform:capitalize; }
         @media (max-width: 991.98px) {
             .dashboard-shell { display:block; }
             .dashboard-sidebar { position:relative; width:100%; height:auto; max-height:none; }
-            .dashboard-main { padding:18px; }
-            .sidebar-link { min-height:64px; grid-template-columns:52px 1fr; }
-            .sidebar-icon { width:46px; height:46px; }
+            .dashboard-main { padding:16px; }
+            .sidebar-link { min-height:48px; grid-template-columns:38px 1fr; }
+            .sidebar-icon { width:34px; height:34px; }
         }
     </style>
 </head>
@@ -112,7 +116,7 @@
                     <span class="sidebar-icon"><i class="bi bi-person-gear"></i></span>
                     <span>Users</span>
                 </a>
-                <a class="sidebar-link" href="{{ route('home') }}">
+                <a class="sidebar-link {{ request()->routeIs('admin.homepage.*') ? 'active' : '' }}" href="{{ route('admin.homepage.edit') }}">
                     <span class="sidebar-icon"><i class="bi bi-file-earmark-text"></i></span>
                     <span>Homepage Content</span>
                 </a>
