@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProviderController;
 use App\Http\Controllers\Admin\HomepageContentController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\AssignmentController;
 use App\Http\Controllers\Auth\AuthController;
@@ -52,4 +53,18 @@ Route::middleware('auth')->group(function () {
         Route::patch('/bookings/{booking}/assign', [AssignmentController::class, 'update'])->name('assignments.update');
         Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     });
+
+    Route::middleware('role:admin,dispatcher')->name('admin.')->group(function () {
+        Route::get('/pages', [PageController::class, 'index'])->name('pages');
+        Route::get('/new-post', [PageController::class, 'create'])->name('pages.create');
+        Route::post('/pages', [PageController::class, 'store'])->name('pages.store');
+        Route::get('/pages/{id}/edit', [PageController::class, 'edit'])->whereNumber('id')->name('pages.edit');
+        Route::put('/pages/{id}', [PageController::class, 'update'])->whereNumber('id')->name('pages.update');
+        Route::delete('/pages/{id}', [PageController::class, 'destroy'])->whereNumber('id')->name('pages.destroy');
+    });
 });
+
+Route::get('/page/{slug}', fn (string $slug) => redirect('/'.$slug, 301));
+Route::get('/{slug}', [PageController::class, 'preview'])
+    ->where('slug', '^(?!admin|bookings|dashboard|forgot-password|login|logout|new-post|page|pages|password|profile|register|storage).+')
+    ->name('pages.preview');

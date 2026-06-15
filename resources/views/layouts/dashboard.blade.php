@@ -18,17 +18,17 @@
             --dash-blue:#0b5ed7;
         }
         body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:.96rem; }
-        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:240px minmax(0,1fr); }
-        .dashboard-sidebar { background:linear-gradient(180deg,#f8fbff 0%,#e8eef7 100%); border-right:1px solid #dbe4f0; padding:14px 10px; height:100vh; overflow-y:auto; position:sticky; top:0; }
-        .dashboard-brand { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:12px; padding:11px 12px; font-size:1.05rem; font-weight:800; color:#233b5a; text-decoration:none; box-shadow:0 10px 28px rgba(15,23,42,.05); }
-        .dashboard-brand-mark { width:30px; height:30px; border-radius:9px; display:grid; place-items:center; color:#fff; background:linear-gradient(135deg,var(--dash-green),var(--dash-blue)); font-size:.76rem; font-weight:800; }
-        .sidebar-section { margin-top:18px; }
-        .sidebar-heading { color:var(--dash-muted); font-size:.58rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; margin:0 0 8px 4px; }
-        .sidebar-link { display:grid; grid-template-columns:38px 1fr; align-items:center; gap:10px; min-height:52px; padding:6px 8px; color:#2d4a70; text-decoration:none; font-size:.94rem; font-weight:700; border-radius:12px; margin-bottom:6px; }
+        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:372px minmax(0,1fr); }
+        .dashboard-sidebar { background:linear-gradient(180deg,#fbfdff 0%,#eef3f8 100%); border-right:1px solid #dbe4f0; padding:48px 30px 28px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:10px 0 30px rgba(15,23,42,.10); }
+        .dashboard-brand { display:flex; align-items:center; justify-content:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:22px; padding:20px 18px; min-height:78px; font-size:1.72rem; font-weight:750; color:#303740; text-decoration:none; box-shadow:0 18px 38px rgba(15,23,42,.07); }
+        .dashboard-brand-mark { display:none; }
+        .sidebar-section { margin-top:45px; }
+        .sidebar-heading { color:#94a4b9; font-size:1.05rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; margin:0 0 24px 2px; }
+        .sidebar-link { display:grid; grid-template-columns:52px 1fr; align-items:center; gap:15px; min-height:68px; padding:8px 14px; color:#42516a; text-decoration:none; font-size:1.45rem; font-weight:700; border-radius:14px; margin-bottom:15px; }
         .sidebar-link:hover, .sidebar-link.active { background:#fff; color:#213a59; box-shadow:0 14px 35px rgba(15,23,42,.06); }
-        .sidebar-icon { width:34px; height:34px; border-radius:10px; background:var(--dash-icon); display:grid; place-items:center; color:#5e789d; font-size:.95rem; }
+        .sidebar-icon { width:52px; height:52px; border-radius:14px; background:#dfe7f2; display:grid; place-items:center; color:#647891; font-size:1.35rem; }
         .sidebar-link.active .sidebar-icon { background:#d7e2f0; color:#42658f; }
-        .dashboard-main { min-width:0; padding:20px; }
+        .dashboard-main { min-width:0; padding:0; background:#eef1f7; }
         .dashboard-topbar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:18px; }
         .dashboard-title { margin:0; font-size:1.55rem; font-weight:800; color:#203a58; }
         .dashboard-subtitle { color:#6b7f99; margin:3px 0 0; font-size:.98rem; }
@@ -76,6 +76,10 @@
         <div class="sidebar-section">
             <p class="sidebar-heading">Content Management</p>
             @if($user?->isRole(['admin', 'dispatcher']))
+                <a class="sidebar-link {{ request()->routeIs('admin.pages*') ? 'active' : '' }}" href="{{ route('admin.pages') }}">
+                    <span class="sidebar-icon"><i class="bi bi-file-earmark-richtext"></i></span>
+                    <span>Pages</span>
+                </a>
                 <a class="sidebar-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}" href="{{ route('admin.services.index') }}">
                     <span class="sidebar-icon"><i class="bi bi-tools"></i></span>
                     <span>Services</span>
@@ -144,13 +148,23 @@
     </aside>
 
     <main class="dashboard-main">
-        <div class="dashboard-topbar">
-            <div>
-                <h1 class="dashboard-title">@yield('dashboard-title', 'Dashboard')</h1>
-                <p class="dashboard-subtitle">@yield('dashboard-subtitle', 'Manage Lasafi operations from one place.')</p>
+        @unless(trim($__env->yieldContent('dashboard-title', 'Dashboard')) === '' && trim($__env->yieldContent('dashboard-subtitle', 'Manage Lasafi operations from one place.')) === '' && trim($__env->yieldContent('dashboard-actions')) === '')
+            <div class="dashboard-topbar">
+                <div>
+                    @hasSection('dashboard-title')
+                        @if(trim($__env->yieldContent('dashboard-title')) !== '')<h1 class="dashboard-title">@yield('dashboard-title')</h1>@endif
+                    @else
+                        <h1 class="dashboard-title">Dashboard</h1>
+                    @endif
+                    @hasSection('dashboard-subtitle')
+                        @if(trim($__env->yieldContent('dashboard-subtitle')) !== '')<p class="dashboard-subtitle">@yield('dashboard-subtitle')</p>@endif
+                    @else
+                        <p class="dashboard-subtitle">Manage Lasafi operations from one place.</p>
+                    @endif
+                </div>
+                @yield('dashboard-actions')
             </div>
-            @yield('dashboard-actions')
-        </div>
+        @endunless
         @if(session('success'))<div class="alert alert-success">{{ session('success') }}</div>@endif
         @if($errors->any())<div class="alert alert-danger">{{ $errors->first() }}</div>@endif
         @yield('content')
