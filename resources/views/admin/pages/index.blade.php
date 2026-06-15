@@ -16,7 +16,7 @@
 @endphp
 <style>
     .pages-screen, .pages-screen button, .pages-screen input, .pages-screen select { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
-    .pages-screen { min-height:100vh; padding:38px 24px 30px; background:#eef1f7; color:#001a3d; font-weight:400; }
+    .pages-screen { min-height:100vh; padding:38px 24px 30px; background:#eef1f7; color:#001a3d; font-weight:400; overflow:hidden; }
     .pages-heading h1 { margin:0; font-size:2.25rem; line-height:1.1; font-weight:800; letter-spacing:0; color:#001438; }
     .pages-heading p { margin:8px 0 32px; font-size:1.25rem; font-weight:400; color:#667789; }
     .pages-card { background:#fff; border-radius:8px 8px 0 0; overflow:hidden; box-shadow:none; }
@@ -27,14 +27,14 @@
     .pages-select { width:150px; height:42px; border:1px solid #cdd6e2; border-radius:6px; padding:0 12px; font-size:.96rem; font-weight:400; color:#2d3748; background:#fff; }
     .pages-apply { height:42px; border:0; border-radius:22px; padding:0 19px; background:#0d80f7; color:#fff; font-size:1.04rem; font-weight:700; }
     .pages-table-wrap { padding:0 26px 26px; background:#fff; overflow-x:auto; }
-    .pages-table { min-width:1060px; width:100%; border-collapse:collapse; table-layout:fixed; color:#001438; }
+    .pages-table { width:100%; border-collapse:collapse; table-layout:fixed; color:#001438; }
     .pages-table thead tr { background:#f7f9fb; border-top:1px solid #dce5ef; border-bottom:1px solid #dce5ef; }
     .pages-table th { padding:16px 18px; color:#556e8f; font-size:.92rem; letter-spacing:.24em; text-transform:uppercase; font-weight:800; }
-    .pages-table td { padding:18px; font-size:1.16rem; line-height:1.45; font-weight:400; vertical-align:middle; border-bottom:18px solid #fff; background:#f0f0f0; }
+    .pages-table td { padding:18px; font-size:1.16rem; line-height:1.45; font-weight:400; vertical-align:middle; border-bottom:18px solid #fff; background:#f0f0f0; overflow-wrap:anywhere; }
     .pages-table tbody tr:nth-child(even) td { background:#fff; }
     .pages-check { width:18px; height:18px; border:1px solid #7b8794; border-radius:4px; }
     .pages-no { width:88px; color:#002d68; }
-    .pages-image { width:225px; height:120px; object-fit:cover; display:block; }
+    .pages-image { width:225px; max-width:100%; height:120px; object-fit:cover; display:block; }
     .pages-action { display:flex; flex-direction:column; align-items:flex-start; gap:4px; }
     .pages-pill { min-width:122px; height:36px; display:inline-flex; align-items:center; justify-content:center; gap:7px; border-radius:20px; background:#fff; font-size:1rem; line-height:1; font-weight:500; text-decoration:none; }
     .pages-pill.preview { color:#0798bd; border:1px solid #08a7ce; }
@@ -73,13 +73,13 @@
             <table class="pages-table">
                 <thead>
                     <tr>
-                        <th style="width:60px;"><input class="pages-check" type="checkbox"></th>
-                        <th style="width:90px;">No.</th>
-                        <th style="width:260px;">Image</th>
-                        <th>Title</th>
-                        <th>Alt Text</th>
-                        <th style="width:160px;">Type</th>
-                        <th style="width:200px;">Action</th>
+                        <th style="width:5%;"><input class="pages-check" type="checkbox"></th>
+                        <th style="width:7%;">No.</th>
+                        <th style="width:19%;">Image</th>
+                        <th style="width:24%;">Title</th>
+                        <th style="width:24%;">Alt Text</th>
+                        <th style="width:9%;">Type</th>
+                        <th style="width:12%;">Action</th>
                     </tr>
                 </thead>
                 <tbody>

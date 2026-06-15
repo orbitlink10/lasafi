@@ -7,8 +7,8 @@
 @section('content')
 <style>
     .page-form-screen, .page-form-screen button, .page-form-screen input, .page-form-screen select, .page-form-screen textarea { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
-    .page-form-screen { min-height:100vh; padding:42px 24px 32px; background:#eef1f7; color:#001438; font-weight:400; }
-    .page-form-wrap { max-width:1225px; }
+    .page-form-screen { min-height:100vh; padding:38px 24px 30px; background:#eef1f7; color:#001438; font-weight:400; overflow:hidden; }
+    .page-form-wrap { width:100%; max-width:none; }
     .page-form-title { margin:0 0 28px; font-size:2.35rem; line-height:1.1; font-weight:800; color:#001438; }
     .page-form-card { background:#fff; border-radius:5px 5px 0 0; box-shadow:0 0 0 1px rgba(15,23,42,.03), 0 10px 28px rgba(15,23,42,.04); overflow:hidden; }
     .page-form-card-head { background:#0d80f7; min-height:64px; display:flex; align-items:center; justify-content:space-between; padding:15px 30px; }

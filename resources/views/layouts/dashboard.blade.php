@@ -21,18 +21,18 @@
             --dash-blue:#0b5ed7;
         }
         body, button, input, select, textarea { font-family:'Manrope', system-ui, -apple-system, "Segoe UI", sans-serif; letter-spacing:0; }
-        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-size:.96rem; font-weight:400; }
-        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:300px minmax(0,1fr); }
-        .dashboard-sidebar { background:linear-gradient(180deg,#fbfdff 0%,#eef3f8 100%); border-right:1px solid #dbe4f0; padding:30px 20px 24px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:8px 0 28px rgba(15,23,42,.08); }
-        .dashboard-brand { display:flex; align-items:center; justify-content:center; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:20px; padding:16px 18px; min-height:70px; font-size:1.5rem; font-weight:700; color:#303740; text-decoration:none; box-shadow:0 16px 34px rgba(15,23,42,.07); }
+        body { margin:0; background:var(--dash-bg); color:var(--dash-ink); font-size:.96rem; font-weight:400; overflow-x:hidden; }
+        .dashboard-shell { min-height:100vh; display:grid; grid-template-columns:374px minmax(0,1fr); }
+        .dashboard-sidebar { background:linear-gradient(180deg,#fbfdff 0%,#eef3f8 100%); border-right:1px solid #dbe4f0; padding:48px 30px 24px; height:100vh; overflow-y:auto; position:sticky; top:0; box-shadow:8px 0 28px rgba(15,23,42,.08); }
+        .dashboard-brand { display:flex; align-items:center; justify-content:flex-start; gap:8px; background:#fff; border:1px solid #d7e1ee; border-radius:20px; padding:16px 40px; min-height:80px; font-size:1.5rem; font-weight:700; color:#303740; text-decoration:none; box-shadow:0 16px 34px rgba(15,23,42,.07); }
         .dashboard-brand-mark { display:none; }
-        .sidebar-section { margin-top:34px; }
-        .sidebar-heading { color:#94a4b9; font-size:.86rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; margin:0 0 18px 2px; }
-        .sidebar-link { display:grid; grid-template-columns:44px 1fr; align-items:center; gap:13px; min-height:56px; padding:6px 10px; color:#42516a; text-decoration:none; font-size:1.15rem; font-weight:700; border-radius:14px; margin-bottom:10px; }
+        .sidebar-section { margin-top:44px; }
+        .sidebar-heading { color:#94a4b9; font-size:.86rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; margin:0 0 22px 2px; }
+        .sidebar-link { display:grid; grid-template-columns:52px 1fr; align-items:center; gap:14px; min-height:66px; padding:7px 14px; color:#42516a; text-decoration:none; font-size:1.15rem; font-weight:700; border-radius:14px; margin-bottom:16px; }
         .sidebar-link:hover, .sidebar-link.active { background:#fff; color:#213a59; box-shadow:0 14px 35px rgba(15,23,42,.06); }
-        .sidebar-icon { width:44px; height:44px; border-radius:12px; background:#dfe7f2; display:grid; place-items:center; color:#647891; font-size:1.08rem; }
+        .sidebar-icon { width:52px; height:52px; border-radius:14px; background:#dfe7f2; display:grid; place-items:center; color:#647891; font-size:1.08rem; }
         .sidebar-link.active .sidebar-icon { background:#d7e2f0; color:#42658f; }
-        .dashboard-main { min-width:0; padding:0; background:#eef1f7; }
+        .dashboard-main { min-width:0; padding:0; background:#eef1f7; overflow-x:hidden; }
         .dashboard-topbar { display:flex; justify-content:space-between; align-items:center; gap:14px; margin-bottom:18px; }
         .dashboard-title { margin:0; font-size:1.55rem; font-weight:800; color:#203a58; }
         .dashboard-subtitle { color:#6b7f99; margin:3px 0 0; font-size:.98rem; }
@@ -46,6 +46,14 @@
         .btn-brand { background:var(--dash-green); color:#fff; border:0; }
         .btn-brand:hover { background:#0a8a5f; color:#fff; }
         .status { text-transform:capitalize; }
+        @media (max-width: 1399.98px) {
+            .dashboard-shell { grid-template-columns:320px minmax(0,1fr); }
+            .dashboard-sidebar { padding:34px 24px 24px; }
+            .dashboard-brand { padding-left:28px; padding-right:28px; }
+            .sidebar-section { margin-top:34px; }
+            .sidebar-link { min-height:58px; grid-template-columns:46px 1fr; margin-bottom:10px; }
+            .sidebar-icon { width:46px; height:46px; }
+        }
         @media (max-width: 991.98px) {
             .dashboard-shell { display:block; }
             .dashboard-sidebar { position:relative; width:100%; height:auto; max-height:none; }
