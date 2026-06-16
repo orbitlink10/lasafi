@@ -74,7 +74,7 @@
     .author-avatar { flex:0 0 58px; width:58px; height:58px; border-radius:50%; display:grid; place-items:center; background:#111827; color:#fff; font-size:18px; font-weight:800; }
     .article-author h2 { margin:0 0 6px; color:#111827; font-size:20px; line-height:28px; font-weight:800; }
     .article-author p { margin:0; color:#4b5563; font-size:15px; line-height:24px; }
-    .article-cta { margin:0 0 48px; padding:34px; border-radius:8px; background:#421983; color:#fff; }
+    .article-cta { margin:0 0 48px; padding:34px; border-radius:8px; background:#421983; color:#fff; text-align:center; }
     .article-cta h2 { margin:0 0 8px; font-size:30px; line-height:38px; font-weight:800; }
     .article-cta p { margin:0 0 20px; color:#eee9ff; font-size:17px; line-height:26px; }
     .article-cta a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 18px; border-radius:6px; background:#ff642d; color:#fff; font-size:16px; line-height:22px; font-weight:800; text-decoration:none; }
