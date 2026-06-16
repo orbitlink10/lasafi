@@ -77,7 +77,7 @@ class DatabaseSeeder extends Seeder
         $services = [
             ['Cleaning', 'Deep House Cleaning', 3500, 'fixed'],
             ['Cleaning', 'Post Construction Cleaning', 6500, 'fixed'],
-            ['Movers', 'Apartment Moving', 8000, 'per km'],
+            ['Movers', 'Apartment Moving', 5000, 'per km'],
             ['Handyman', 'General Repairs', 1800, 'hourly'],
             ['Pest Control', 'Cockroach and Bedbug Control', 4500, 'fixed'],
             ['Laundry', 'Wash and Fold', 700, 'per item'],
