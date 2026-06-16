@@ -44,42 +44,34 @@
         @media (max-width: 1199.98px) { .kingdom-arrow { display:none; } .kingdom-service-card { min-height:275px; } }
         .metric { border-left:4px solid var(--slk-green); }
         .status { text-transform:capitalize; }
-        .site-footer { margin-top:56px; color:#fff; font-family:'Trebuchet MS', 'Segoe UI', Arial, sans-serif; }
-        .footer-nav { background:#fff; border-top:1px solid #edf0f4; border-bottom:1px solid #edf0f4; }
-        .footer-nav .container { min-height:62px; display:flex; align-items:center; justify-content:center; gap:56px; flex-wrap:wrap; }
-        .footer-nav a { color:#404040; text-decoration:none; text-transform:uppercase; font-size:26px; line-height:32px; font-weight:500; letter-spacing:1px; }
-        .footer-nav a:hover { color:var(--slk-green); }
-        .footer-main { position:relative; overflow:hidden; background:linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover; padding:44px 0 36px; }
-        .footer-title { margin:0 0 26px; color:#fff; font-size:30px; line-height:36px; font-weight:700; }
-        .footer-brand { display:flex; align-items:center; gap:12px; margin-bottom:26px; color:#fff; text-decoration:none; }
-        .footer-brand .brand-mark { width:54px; height:54px; border-radius:12px; font-size:23px; }
-        .footer-brand strong { font-size:31px; line-height:36px; }
-        .footer-contact { display:grid; gap:13px; margin:0; padding:0; list-style:none; }
-        .footer-contact li { display:flex; align-items:flex-start; gap:12px; color:#fff; font-size:25px; line-height:33px; }
+        .site-footer { margin-top:56px; color:#fff; font-family:'Trebuchet MS', 'Segoe UI', Arial, sans-serif; font-size:12px; line-height:18px; }
+        .footer-main { position:relative; overflow:hidden; background:linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover; padding:34px 0 28px; }
+        .footer-title { margin:0 0 16px; color:#fff; font-size:16px; line-height:22px; font-weight:700; }
+        .footer-brand { display:flex; align-items:center; gap:8px; margin-bottom:16px; color:#fff; text-decoration:none; }
+        .footer-brand .brand-mark { width:38px; height:38px; border-radius:10px; font-size:16px; }
+        .footer-brand strong { font-size:18px; line-height:24px; }
+        .footer-contact { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+        .footer-contact li { display:flex; align-items:flex-start; gap:8px; color:#fff; font-size:12px; line-height:18px; }
         .footer-contact i, .footer-services i, .footer-address i { color:#ff8800; flex:0 0 auto; margin-top:3px; }
-        .footer-services { columns:2; column-gap:58px; margin:0 0 28px; padding:0; list-style:none; }
-        .footer-services li { break-inside:avoid; display:flex; gap:12px; margin:0 0 14px; color:#fff; font-size:25px; line-height:34px; }
+        .footer-services { columns:2; column-gap:36px; margin:0 0 18px; padding:0; list-style:none; }
+        .footer-services li { break-inside:avoid; display:flex; gap:8px; margin:0 0 8px; color:#fff; font-size:12px; line-height:18px; }
         .footer-services a { color:#fff; text-decoration:none; }
         .footer-services a:hover { color:#ffad3d; }
-        .footer-address { display:flex; gap:13px; color:#fff; font-size:25px; line-height:34px; }
-        .footer-social { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:72px; }
-        .footer-social a { width:52px; height:52px; border-radius:8px; display:grid; place-items:center; background:#ff8800; color:#fff; font-size:28px; text-decoration:none; }
-        .footer-newsletter { display:flex; width:100%; max-width:600px; }
-        .footer-newsletter input { min-width:0; flex:1; height:60px; border:1px solid #cfd4dc; border-radius:8px 0 0 8px; padding:10px 20px; color:#4b5563; font-size:27px; line-height:34px; }
-        .footer-newsletter button { height:60px; border:0; border-radius:0 8px 8px 0; padding:10px 20px; background:#ff8800; color:#fff; font-size:25px; line-height:34px; }
-        .footer-copy { padding-top:28px; color:#d7d7d7; font-size:15px; }
+        .footer-address { display:flex; gap:8px; color:#fff; font-size:12px; line-height:18px; }
+        .footer-social { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:32px; }
+        .footer-social a { width:30px; height:30px; border-radius:6px; display:grid; place-items:center; background:#ff8800; color:#fff; font-size:16px; text-decoration:none; }
+        .footer-newsletter { display:flex; width:100%; max-width:360px; }
+        .footer-newsletter input { min-width:0; flex:1; height:34px; border:1px solid #cfd4dc; border-radius:6px 0 0 6px; padding:6px 10px; color:#4b5563; font-size:12px; line-height:18px; }
+        .footer-newsletter button { height:34px; border:0; border-radius:0 6px 6px 0; padding:6px 10px; background:#ff8800; color:#fff; font-size:12px; line-height:18px; }
+        .footer-copy { padding-top:18px; color:#d7d7d7; font-size:11px; line-height:16px; }
         @media (max-width: 991.98px) {
-            .footer-nav .container { gap:24px; padding-top:18px; padding-bottom:18px; }
-            .footer-nav a { font-size:20px; line-height:26px; }
             .footer-services { columns:1; }
-            .footer-social { margin-bottom:36px; }
+            .footer-social { margin-bottom:24px; }
         }
         @media (max-width: 575.98px) {
-            .footer-main { padding:34px 0 28px; }
-            .footer-title { font-size:25px; line-height:31px; }
-            .footer-contact li, .footer-services li, .footer-address { font-size:20px; line-height:29px; }
+            .footer-main { padding:28px 0 24px; }
             .footer-newsletter { flex-direction:column; gap:10px; }
-            .footer-newsletter input, .footer-newsletter button { width:100%; border-radius:8px; font-size:20px; }
+            .footer-newsletter input, .footer-newsletter button { width:100%; border-radius:6px; }
         }
     </style>
 </head>
@@ -128,16 +120,6 @@
     @yield('content')
 </main>
 <footer class="site-footer">
-    <nav class="footer-nav" aria-label="Footer navigation">
-        <div class="container">
-            <a href="{{ route('home') }}">Home</a>
-            <a href="{{ route('pages.preview', 'services') }}">Services</a>
-            <a href="{{ route('pages.preview', 'about-us') }}">About Us</a>
-            <a href="{{ route('home') }}#testimonials">Testimonials</a>
-            <a href="{{ route('pages.preview', 'lasafi-cleaning-services-in-kenya') }}">Blog</a>
-            <a href="{{ route('bookings.create') }}">Contact Us</a>
-        </div>
-    </nav>
     <section class="footer-main">
         <div class="container">
             <div class="row g-5">
