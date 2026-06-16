@@ -6,10 +6,6 @@
 @section('content')
 @php
     $body = $page['description'] ?? '';
-    $publishedDate = $page['updated_at'] ?? $page['created_at'] ?? now()->format('F j, Y');
-    $plainText = trim(strip_tags($body));
-    $wordCount = str_word_count($plainText);
-    $readMinutes = max(1, (int) ceil($wordCount / 220));
     $headings = [];
 
     preg_match_all('/<h([2-3])[^>]*>(.*?)<\/h[2-3]>/is', $body, $matches, PREG_SET_ORDER);
@@ -43,14 +39,8 @@
     .article-page, .article-page button, .article-page input { font-family:Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; letter-spacing:0; }
     .article-page { background:#fff; color:#191b23; font-size:18px; line-height:1.68; }
     .article-shell { max-width:1180px; margin:0 auto; padding:34px 20px 72px; }
-    .article-breadcrumb { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 26px; padding:0; list-style:none; color:#6b7280; font-size:14px; line-height:20px; font-weight:500; }
-    .article-breadcrumb a { color:#6b7280; text-decoration:none; }
-    .article-breadcrumb a:hover { color:#ff642d; }
     .article-grid { display:grid; grid-template-columns:minmax(0, 760px) 300px; gap:72px; align-items:start; }
-    .article-kicker { display:inline-flex; align-items:center; margin-bottom:18px; color:#ff642d; font-size:14px; line-height:20px; font-weight:800; text-transform:uppercase; }
     .article-title { max-width:820px; margin:0 0 18px; color:#111827; font-size:clamp(42px, 5vw, 64px); line-height:.98; font-weight:800; letter-spacing:0; }
-    .article-meta { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; margin-bottom:28px; color:#5b6472; font-size:15px; line-height:22px; }
-    .article-meta strong { color:#111827; font-weight:700; }
     .article-hero { width:100%; margin:0 0 34px; border-radius:8px; overflow:hidden; background:#eef1f5; }
     .article-hero img { display:block; width:100%; aspect-ratio:16 / 9; object-fit:cover; }
     .article-summary { margin:0 0 32px; color:#343946; font-size:21px; line-height:1.55; font-weight:400; }
@@ -84,7 +74,7 @@
     .author-avatar { flex:0 0 58px; width:58px; height:58px; border-radius:50%; display:grid; place-items:center; background:#111827; color:#fff; font-size:18px; font-weight:800; }
     .article-author h2 { margin:0 0 6px; color:#111827; font-size:20px; line-height:28px; font-weight:800; }
     .article-author p { margin:0; color:#4b5563; font-size:15px; line-height:24px; }
-    .article-cta { margin-top:54px; padding:34px; border-radius:8px; background:#421983; color:#fff; }
+    .article-cta { margin:0 0 48px; padding:34px; border-radius:8px; background:#421983; color:#fff; }
     .article-cta h2 { margin:0 0 8px; font-size:30px; line-height:38px; font-weight:800; }
     .article-cta p { margin:0 0 20px; color:#eee9ff; font-size:17px; line-height:26px; }
     .article-cta a { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 18px; border-radius:6px; background:#ff642d; color:#fff; font-size:16px; line-height:22px; font-weight:800; text-decoration:none; }
@@ -109,24 +99,15 @@
 </style>
 <article class="article-page">
     <div class="article-shell">
-        <ol class="article-breadcrumb" aria-label="Breadcrumb">
-            <li><a href="{{ route('home') }}">Lasafi</a></li>
-            <li>/</li>
-            <li><a href="{{ route('home') }}">Blog</a></li>
-            <li>/</li>
-            <li>{{ $page['type'] ?? 'Post' }}</li>
-        </ol>
+        <section class="article-cta">
+            <h2>Book trusted home and office services</h2>
+            <p>Schedule cleaning, moving, repairs, CCTV, networking, or maintenance support from vetted Lasafi providers.</p>
+            <a href="{{ route('bookings.create') }}">Book a service</a>
+        </section>
 
         <div class="article-grid">
             <main>
-                <span class="article-kicker">{{ $page['type'] ?? 'Post' }}</span>
                 <h1 class="article-title">{{ $page['title'] }}</h1>
-
-                <div class="article-meta">
-                    <span>Author: <strong>Lasafi Editorial Team</strong></span>
-                    <span>{{ $readMinutes }} min read</span>
-                    <span>{{ $publishedDate }}</span>
-                </div>
 
                 <figure class="article-hero">
                     <img src="{{ $image }}" alt="{{ $page['alt'] ?? $page['title'] }}">
@@ -168,12 +149,6 @@
                         <h2>Lasafi Editorial Team</h2>
                         <p>Service guides, maintenance advice, and practical planning resources from the Lasafi team for homes and businesses in Kenya.</p>
                     </div>
-                </section>
-
-                <section class="article-cta">
-                    <h2>Book trusted home and office services</h2>
-                    <p>Schedule cleaning, moving, repairs, CCTV, networking, or maintenance support from vetted Lasafi providers.</p>
-                    <a href="{{ route('bookings.create') }}">Book a service</a>
                 </section>
             </main>
 
