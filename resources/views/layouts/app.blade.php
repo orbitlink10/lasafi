@@ -8,6 +8,7 @@
     @endif
     <title>@yield('title', 'Lasafi')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
         :root { --slk-green:#0f9f6e; --slk-blue:#0b5ed7; --slk-ink:#123; --slk-soft:#eef8f4; }
         body { background:#f6f9fb; color:var(--slk-ink); font-size:1rem; }
@@ -43,7 +44,43 @@
         @media (max-width: 1199.98px) { .kingdom-arrow { display:none; } .kingdom-service-card { min-height:275px; } }
         .metric { border-left:4px solid var(--slk-green); }
         .status { text-transform:capitalize; }
-        footer { background:#071b2f; color:#d9e8f3; }
+        .site-footer { margin-top:56px; color:#fff; font-family:'Trebuchet MS', 'Segoe UI', Arial, sans-serif; }
+        .footer-nav { background:#fff; border-top:1px solid #edf0f4; border-bottom:1px solid #edf0f4; }
+        .footer-nav .container { min-height:62px; display:flex; align-items:center; justify-content:center; gap:56px; flex-wrap:wrap; }
+        .footer-nav a { color:#404040; text-decoration:none; text-transform:uppercase; font-size:26px; line-height:32px; font-weight:500; letter-spacing:1px; }
+        .footer-nav a:hover { color:var(--slk-green); }
+        .footer-main { position:relative; overflow:hidden; background:linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.82)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover; padding:44px 0 36px; }
+        .footer-title { margin:0 0 26px; color:#fff; font-size:30px; line-height:36px; font-weight:700; }
+        .footer-brand { display:flex; align-items:center; gap:12px; margin-bottom:26px; color:#fff; text-decoration:none; }
+        .footer-brand .brand-mark { width:54px; height:54px; border-radius:12px; font-size:23px; }
+        .footer-brand strong { font-size:31px; line-height:36px; }
+        .footer-contact { display:grid; gap:13px; margin:0; padding:0; list-style:none; }
+        .footer-contact li { display:flex; align-items:flex-start; gap:12px; color:#fff; font-size:25px; line-height:33px; }
+        .footer-contact i, .footer-services i, .footer-address i { color:#ff8800; flex:0 0 auto; margin-top:3px; }
+        .footer-services { columns:2; column-gap:58px; margin:0 0 28px; padding:0; list-style:none; }
+        .footer-services li { break-inside:avoid; display:flex; gap:12px; margin:0 0 14px; color:#fff; font-size:25px; line-height:34px; }
+        .footer-services a { color:#fff; text-decoration:none; }
+        .footer-services a:hover { color:#ffad3d; }
+        .footer-address { display:flex; gap:13px; color:#fff; font-size:25px; line-height:34px; }
+        .footer-social { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:72px; }
+        .footer-social a { width:52px; height:52px; border-radius:8px; display:grid; place-items:center; background:#ff8800; color:#fff; font-size:28px; text-decoration:none; }
+        .footer-newsletter { display:flex; width:100%; max-width:600px; }
+        .footer-newsletter input { min-width:0; flex:1; height:60px; border:1px solid #cfd4dc; border-radius:8px 0 0 8px; padding:10px 20px; color:#4b5563; font-size:27px; line-height:34px; }
+        .footer-newsletter button { height:60px; border:0; border-radius:0 8px 8px 0; padding:10px 20px; background:#ff8800; color:#fff; font-size:25px; line-height:34px; }
+        .footer-copy { padding-top:28px; color:#d7d7d7; font-size:15px; }
+        @media (max-width: 991.98px) {
+            .footer-nav .container { gap:24px; padding-top:18px; padding-bottom:18px; }
+            .footer-nav a { font-size:20px; line-height:26px; }
+            .footer-services { columns:1; }
+            .footer-social { margin-bottom:36px; }
+        }
+        @media (max-width: 575.98px) {
+            .footer-main { padding:34px 0 28px; }
+            .footer-title { font-size:25px; line-height:31px; }
+            .footer-contact li, .footer-services li, .footer-address { font-size:20px; line-height:29px; }
+            .footer-newsletter { flex-direction:column; gap:10px; }
+            .footer-newsletter input, .footer-newsletter button { width:100%; border-radius:8px; font-size:20px; }
+        }
     </style>
 </head>
 <body>
@@ -54,9 +91,9 @@
         <div id="nav" class="collapse navbar-collapse">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#how-it-works">How It Works</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#why-lasafi">Why Lasafi</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('pages.preview', 'services') }}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('pages.preview', 'how-it-works') }}">How It Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('pages.preview', 'why-lasafi') }}">Why Lasafi</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#service-areas">Areas</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('home') }}#testimonials">Testimonials</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('bookings.create') }}">Book</a></li>
@@ -90,11 +127,65 @@
     @if($errors->any())<div class="container mt-3"><div class="alert alert-danger">{{ $errors->first() }}</div></div>@endif
     @yield('content')
 </main>
-<footer class="py-4 mt-5">
-    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
-        <span>Lasafi</span>
-        <span>Cleaning, movers, repairs, networking, CCTV and office maintenance.</span>
-    </div>
+<footer class="site-footer">
+    <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="container">
+            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('pages.preview', 'services') }}">Services</a>
+            <a href="{{ route('pages.preview', 'about-us') }}">About Us</a>
+            <a href="{{ route('home') }}#testimonials">Testimonials</a>
+            <a href="{{ route('pages.preview', 'lasafi-cleaning-services-in-kenya') }}">Blog</a>
+            <a href="{{ route('bookings.create') }}">Contact Us</a>
+        </div>
+    </nav>
+    <section class="footer-main">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-3">
+                    <h2 class="footer-title">CONTACT US</h2>
+                    <a class="footer-brand" href="{{ route('home') }}"><span class="brand-mark">LA</span><strong>Lasafi</strong></a>
+                    <ul class="footer-contact">
+                        <li><i class="bi bi-telephone-fill"></i><span>+254 711 000 000</span></li>
+                        <li><i class="bi bi-envelope-fill"></i><span>support@lasafi.co.ke</span></li>
+                        <li><i class="bi bi-calendar3"></i><span>Mon-Fri: 8am - 5pm</span></li>
+                        <li><i class="bi bi-calendar3"></i><span>Sat: 8am - 12pm</span></li>
+                        <li><i class="bi bi-calendar3"></i><span>Sun: Closed</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <h2 class="footer-title text-lg-center">Our Services</h2>
+                    <ul class="footer-services">
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Residential Cleaning</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Commercial Cleaning</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Move-In and Move-Out Cleaning</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Post-Construction Cleaning</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Sofa and Carpet Cleaning</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Office Maintenance</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">Laundry Services</a></li>
+                        <li><i class="bi bi-chevron-right"></i><a href="{{ route('pages.preview', 'services') }}">CCTV and Networking</a></li>
+                    </ul>
+                    <h2 class="footer-title mt-4 mb-3">Our Office Address</h2>
+                    <div class="footer-address"><i class="bi bi-geo-alt-fill"></i><span>Nairobi, Kenya. Mobile teams available across Nairobi, Kiambu, Machakos, Kajiado, Mombasa, Nakuru, Kisumu, and Eldoret.</span></div>
+                </div>
+                <div class="col-lg-4">
+                    <h2 class="footer-title">Find Us On Social Media</h2>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                    <h2 class="footer-title">Signup To Our Newsletter</h2>
+                    <form class="footer-newsletter" action="{{ route('home') }}" method="get">
+                        <input type="email" name="email" placeholder="Email Address..." aria-label="Email Address">
+                        <button type="submit">Subscribe!</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-copy">© {{ date('Y') }} Lasafi. Cleaning, movers, repairs, networking, CCTV and office maintenance.</div>
+        </div>
+    </section>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @stack('scripts')
