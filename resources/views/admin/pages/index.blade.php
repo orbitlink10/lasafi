@@ -11,7 +11,9 @@
             return 'https://via.placeholder.com/260x150?text=No+Image';
         }
 
-        return str_starts_with($image, 'http') ? $image : asset('storage/'.ltrim($image, '/'));
+        return str_starts_with($image, 'http') || str_starts_with($image, '//')
+            ? $image
+            : route('pages.image', ['path' => ltrim($image, '/')]);
     };
 @endphp
 <style>

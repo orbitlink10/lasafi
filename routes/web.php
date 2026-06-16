@@ -65,6 +65,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/page/{slug}', fn (string $slug) => redirect('/'.$slug, 301));
+Route::get('/page-images/{path}', [PageController::class, 'image'])
+    ->where('path', '.*')
+    ->name('pages.image');
 Route::get('/{slug}', [PageController::class, 'preview'])
     ->where('slug', '^(?!admin|bookings|dashboard|forgot-password|login|logout|new-post|page|pages|password|profile|register|storage).+')
     ->name('pages.preview');

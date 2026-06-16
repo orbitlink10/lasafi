@@ -108,6 +108,17 @@ class PageController extends Controller
         ]);
     }
 
+    public function image(string $path)
+    {
+        $path = ltrim(rawurldecode($path), '/');
+
+        abort_if($path === '' || str_contains($path, '..') || ! Storage::disk('public')->exists($path), 404);
+
+        return response(Storage::disk('public')->get($path), 200)
+            ->header('Content-Type', Storage::disk('public')->mimeType($path) ?: 'application/octet-stream')
+            ->header('Cache-Control', 'public, max-age=604800');
+    }
+
     private function validated(Request $request): array
     {
         return $request->validate([
@@ -189,6 +200,6 @@ class PageController extends Controller
             return $image;
         }
 
-        return asset('storage/'.ltrim($image, '/'));
+        return route('pages.image', ['path' => ltrim($image, '/')]);
     }
 }
