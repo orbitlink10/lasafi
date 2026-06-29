@@ -44,9 +44,15 @@
     .pages-pill.update { color:#ffb000; border:1px solid #ffbf19; }
     .pages-pill.delete { color:#ff2434; border:1px solid #ff2434; }
     .pages-delete-form { margin:0; }
+    .pages-pagination { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:0 20px 20px; background:#fff; color:#64748b; font-size:14px; line-height:21px; }
+    .pages-pagination .pagination { margin:0; flex-wrap:wrap; gap:4px; }
+    .pages-pagination .page-link { border-radius:999px; color:#007bff; border-color:#dee2e6; }
+    .pages-pagination .page-item.active .page-link { background:#007bff; border-color:#007bff; color:#fff; }
+    .pages-pagination .page-item.disabled .page-link { color:#94a3b8; }
     @media (max-width: 991.98px) {
         .pages-screen { padding:20px 16px; }
-        .pages-card-head, .pages-toolbar, .pages-table-wrap { padding-left:16px; padding-right:16px; }
+        .pages-card-head, .pages-toolbar, .pages-table-wrap, .pages-pagination { padding-left:16px; padding-right:16px; }
+        .pages-pagination { align-items:flex-start; flex-direction:column; }
     }
 </style>
 <div class="pages-screen">
@@ -108,6 +114,15 @@
                 </tbody>
             </table>
         </div>
+
+        @if($posts->hasPages())
+            <div class="pages-pagination">
+                <div>
+                    Showing {{ $posts->firstItem() }} to {{ $posts->lastItem() }} of {{ $posts->total() }} pages
+                </div>
+                {{ $posts->links('pagination::bootstrap-5') }}
+            </div>
+        @endif
     </section>
 </div>
 @endsection

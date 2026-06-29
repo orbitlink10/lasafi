@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -11,10 +12,25 @@ class PageController extends Controller
 {
     private string $store = 'pages.json';
 
-    public function index()
+    public function index(Request $request)
     {
+        $pages = collect($this->pages())
+            ->sortByDesc(fn ($page) => (int) ($page['id'] ?? 0))
+            ->values();
+        $perPage = 15;
+        $currentPage = LengthAwarePaginator::resolveCurrentPage();
+
         return view('admin.pages.index', [
-            'posts' => $this->pages(),
+            'posts' => new LengthAwarePaginator(
+                $pages->forPage($currentPage, $perPage)->values(),
+                $pages->count(),
+                $perPage,
+                $currentPage,
+                [
+                    'path' => $request->url(),
+                    'query' => $request->query(),
+                ],
+            ),
         ]);
     }
 
